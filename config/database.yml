@@ -1,0 +1,33 @@
+default: &default
+  #adapter: mysql2
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #username: root
+  #password:
+  #socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: nurseryschoolalbum_31_development
+
+
+test:
+  <<: *default
+  adapter: mysql2
+  username: root
+  password:
+  host: localhost
+  database: nurseryschoolalbum_31_test
+
+
+production:
+  <<: *default
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
+  #database: nurseryschoolalbum_31_production
+  #username: nurseryschoolalbum_31
+  #password: <%= ENV['NURSERYSCHOOLALBUM_31_DATABASE_PASSWORD'] %>
