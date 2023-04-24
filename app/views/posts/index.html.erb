@@ -2,7 +2,12 @@
 <h3><%= link_to '新規投稿', new_post_path%></h3>
 <% @posts.each do |post| %>
   <div class="posted-content">
-    <%= image_tag post.images[0] %><br>
-    <%= link_to '詳細', post_path(post.id)%>
+      <% post.images[0..-1].each do |image| %>
+      <div class="other-image">
+        <%= image_tag image %>
+      </div>
+      <%= link_to '詳細', post_path(post.id)%>
+    <%end%>  
+    
   </div>
 <% end %>
