@@ -33,8 +33,10 @@
           <div class="other-image">
             <%= image_tag image %>
           </div>
-          <%= link_to '詳細', post_path(post.id)%>
-          <%= link_to '削除', post_path(post.id), method: :delete %>
+          <%#= link_to '詳細', post_path(post.id)%>
+          <% if user_signed_in? && current_user.id == post.user_id %>
+            <%= link_to '削除', post_path(post.id), method: :delete %>
+           <% end %>
           <span class="name">
           <a href="/users/<%= post.user.id %>">
             <span>投稿者</span><%= post.user.nickname %>
