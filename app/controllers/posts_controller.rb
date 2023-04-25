@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
+  
 
   def new
     @post = Post.new
@@ -28,6 +29,7 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
 
   private
   def post_params
