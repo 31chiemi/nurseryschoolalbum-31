@@ -1,7 +1,7 @@
 img {
-  height: 100px;
-  width: 100px;
-  /* 縦横比を保ったまま、画像を縦横100pxのサイズに収めるプロパティです */
+  height: 300px;
+  width: 300px;
+  /* 縦横比を保ったまま、画像を縦横300pxのサイズに収める */
   object-fit: contain;
 }
 
@@ -11,6 +11,7 @@ img {
 
 .other-image {
   margin-right: 10px;
+  margin-left: 25px;
 }
 
 .image-delete-button {
