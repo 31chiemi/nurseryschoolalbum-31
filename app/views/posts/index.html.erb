@@ -8,8 +8,9 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= link_to "マイページ", "/users/#{current_user.id}" %>
             <%= link_to "投稿する", new_post_path, class: "post" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
           </li>
         <% else %>
           <li class="nav-item">
@@ -34,6 +35,11 @@
           </div>
           <%= link_to '詳細', post_path(post.id)%>
           <%= link_to '削除', post_path(post.id), method: :delete %>
+          <span class="name">
+          <a href="/users/<%= post.user.id %>">
+            <span>投稿者</span><%= post.user.nickname %>
+          </a>
+          </span>
         </div>
       <%end%>  
   </div>

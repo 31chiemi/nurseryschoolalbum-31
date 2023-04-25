@@ -1,0 +1,13 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+ <% @posts.each do |post| %>
+  <div class="posted-content">
+      <% post.images[0..-1].each do |image| %>
+        <div class="card">
+          <div class="other-image">
+            <%= image_tag image %>
+          </div>
+        </div>
+      <%end%>  
+  </div>
+<% end %>

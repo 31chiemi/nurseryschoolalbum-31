@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:user)
   end
   
 
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:text, {images: []})
+    params.require(:post).permit(:text, {images: []}).merge(user_id: current_user.id)
   end
 
   def set_post
