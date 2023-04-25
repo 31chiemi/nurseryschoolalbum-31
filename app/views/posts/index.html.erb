@@ -32,6 +32,7 @@
             <%= image_tag image %>
           </div>
           <%= link_to '詳細', post_path(post.id)%>
+          <%= link_to '削除', post_path(post.id), method: :delete %>
         </div>
       <%end%>  
   </div>
