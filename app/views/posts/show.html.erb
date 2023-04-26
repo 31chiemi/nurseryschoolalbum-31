@@ -5,8 +5,9 @@
       <div class="other-image">
         <%= image_tag image %>
       </div>
+      <%= @post.created_at.strftime('%Y/%m/%d') %>
     <%end%>
-    <%= link_to '編集', edit_post_path(@post.id)%>
+    <%= link_to '編集', edit_post_path(@post.id), class: "post"%>
   </div>
 </div>
 <!-- CSS only -->
