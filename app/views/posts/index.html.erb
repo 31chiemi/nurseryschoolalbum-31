@@ -36,9 +36,9 @@
           <%= link_to '詳細', post_path(post.id), class: "post" %>
           <% if user_signed_in? && current_user.id == post.user_id %>
             <%= link_to '削除', post_path(post.id), method: :delete, class: "post" %>
-           <% end %>
+          <% end %>
           <span class="name">
-          <a href="/users/<%= post.user.id %>" style="text-decoration:none;">
+          <a href="/users/<%= post.user.id %>" , class="link-dark">
             <span>投稿者</span><%= post.user.nickname %>
           </a>
           </span>
